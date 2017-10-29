@@ -1,0 +1,3 @@
+const myFunc = undefined
+
+myFunc()
