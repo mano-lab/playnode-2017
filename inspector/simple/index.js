@@ -9,20 +9,31 @@ function thisSupposesToSetMyData (i) {
   }
 }
 function thisAlsoSupposesToSet (i) {
-  return i.my.data.should.be = {
+  i.my.data.should.be = {
     here: 'You live only once.'
   }
+  return i
 }
 function andThisShouldEnsureMyDataComplete (i) {
-  return {
-    my: {
-      data: {
-        should: {
-        }
-      }
-    }
-  }
+  delete i.my.data.should.be.here
+  return i
 }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 const myInitialData = {}
 

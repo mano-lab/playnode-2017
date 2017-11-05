@@ -1,3 +1,5 @@
+const express = require('express')
+
 const weight = 72
 const height = 1.8
 
@@ -15,8 +17,12 @@ function createMessageWithBMI(bmi) {
   }
 }
 
-const bmi = calculateBMI(weight, height)
+function run() {
+  const bmi = calculateBMI(weight, height)
 
-const message = createMessageWithBMI(bmi)
+  const message = createMessageWithBMI(bmi)
 
-console.log(message)
+  document.write(message)
+}
+
+setTimeout(run, 500)

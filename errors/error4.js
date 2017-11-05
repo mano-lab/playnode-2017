@@ -1,3 +1,3 @@
-const myFunc = undefined
+const myFunc = null
 
 myFunc()

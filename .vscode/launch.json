@@ -1,0 +1,49 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "port": 9222,
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceRoot}/inspector/webpack"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/inspector/typescript/src/index.ts",
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    },
+    {
+      "name": "TTD Replay",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "stopOnEntry": true,
+      "windows": {
+        "runtimeExecutable": "nvs.cmd"
+      },
+      "osx": {
+        "runtimeExecutable": "nvs"
+      },
+      "linux": {
+        "runtimeExecutable": "nvs"
+      },
+      "runtimeArgs": [
+        "run",
+        "chakracore/latest",
+        "--nolazy",
+        "--break-first",
+        "--replay-debug=/Users/junyoungchoi/Code/playnode-2017/inspector/ttd/_diagnosticTraces/emitOnException_pid32217"
+      ],
+      "console": "internalConsole"
+    }
+  ]
+}
